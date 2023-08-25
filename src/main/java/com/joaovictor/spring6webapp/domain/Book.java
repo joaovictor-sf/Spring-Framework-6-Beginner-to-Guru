@@ -21,6 +21,9 @@ public class Book {
     //Alguns prefeririam usar List, mas List possibilidade elementos repeditos,
     // e cada elemento irá ser único, então ultilizaremos Set
 
+    @ManyToOne
+    private Publisher publisher;
+
     public Set<Author> getAuthors() {
         return authors;
     }
@@ -53,6 +56,14 @@ public class Book {
         this.isbn = isbn;
     }
 
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
+    }
+
     @Override
     public String toString() {
         return "Book{" +
@@ -60,6 +71,7 @@ public class Book {
                 ", name='" + name + '\'' +
                 ", isbn='" + isbn + '\'' +
                 ", authors=" + authors +
+                ", publisher=" + publisher +
                 '}';
     }
 
