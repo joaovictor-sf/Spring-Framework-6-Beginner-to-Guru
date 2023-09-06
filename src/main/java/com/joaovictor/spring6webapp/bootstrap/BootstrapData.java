@@ -36,6 +36,8 @@ public class BootstrapData implements CommandLineRunner {
 
         Author john = new Author();
         Book alho = new Book();
+        alho.setName("Alho");
+        alho.setIsbn("654321");
 
         Publisher publisher = new Publisher();
         publisher.setPublisherName("My Publisher");
