@@ -12,6 +12,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class BootstrapData implements CommandLineRunner {
 
+    // Essa classe serve para: ao iniciar a aplicação, ela já insere alguns dados no banco de dados.
+
     private final AuthorRepository authorRepository;
     private final BookRepository bookRepository;
     private final PublisherRepository publisherRepository;

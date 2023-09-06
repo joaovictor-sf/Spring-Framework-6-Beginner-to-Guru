@@ -9,13 +9,15 @@ import java.util.Set;
 @Entity
 public class Author {
 
+    //Uma entidade deve ter uma chave primária.
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String FirstName;
     private String LastName;
 
-    @ManyToMany(mappedBy = "authors")
+    //A anotação @ManyToMany é usada para mapear relacionamentos muitos-para-muitos.
+    @ManyToMany(mappedBy = "authors")//mappedBy é usado para mapear o relacionamento bidirecional.
     private Set<Book> books = new HashSet<>();
 
     public Set<Book> getBooks() {

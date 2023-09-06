@@ -8,6 +8,8 @@ import java.util.Set;
 @Entity
 public class Book {
 
+    //Por que essa classe não tem um (mappedBy = "book")? Porque ela é a classe que está sendo mapeada
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -16,7 +18,7 @@ public class Book {
 
     @ManyToMany
     @JoinTable(name = "author_book", joinColumns = @JoinColumn(name = "book_id"),
-        inverseJoinColumns = @JoinColumn(name = "author_id"))
+        inverseJoinColumns = @JoinColumn(name = "author_id"))//Essa anotação é necessária para criar uma tabela de relacionamento
     private Set<Author> authors = new HashSet<>();
     //Alguns prefeririam usar List, mas List possibilidade elementos repeditos,
     // e cada elemento irá ser único, então ultilizaremos Set
