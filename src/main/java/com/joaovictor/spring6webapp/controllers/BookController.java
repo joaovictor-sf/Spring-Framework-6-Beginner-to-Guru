@@ -15,6 +15,7 @@ public class BookController {
 
      @RequestMapping("/books")
      public String getBooks(Model model) {
+         // Model é um objeto que é passado para a view, e a view pode acessar os dados que estão dentro dele.
          model.addAttribute("books", bookService.findAll());
          return "books";
      }
