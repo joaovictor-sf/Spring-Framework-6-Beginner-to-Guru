@@ -105,3 +105,29 @@ Thymeleaf é um mecanismo de modelo Java que pode ser usado para renderizar arqu
 
     </body>
     </html>
+
+## SOLID
+SOLID é um acrônimo para os cinco princípios de design de classe orientada a objetos. 
+
+SOLID significa:
+
+- S - Princípio da responsabilidade única
+- O - Princípio do aberto / fechado
+- L - Princípio da substituição de Liskov
+- I - Princípio da segregação da interface
+- D - Princípio da inversão de dependência
+
+### Princípio da responsabilidade única
+O princípio da responsabilidade única afirma que uma classe deve ter apenas uma única responsabilidade.
+
+### Princípio do aberto / fechado
+O princípio do aberto / fechado afirma que uma classe deve ser aberta para extensão, mas fechada para modificação. Isso significa que você pode estender uma classe adicionando novos comportamentos, mas não deve modificar o comportamento existente.
+
+### Princípio da substituição de Liskov
+O princípio da substituição de Liskov afirma que você deve ser capaz de substituir uma classe base por uma classe derivada sem quebrar o comportamento do programa.
+
+### Princípio da segregação da interface
+O princípio da segregação da interface afirma que você deve dividir uma interface grande em interfaces menores e mais específicas, para que as classes que a implementam não precisem implementar métodos que não usam.
+
+### Princípio da inversão de dependência
+O princípio da inversão de dependência afirma que você deve depender de abstrações e não de implementações. Isso significa que você deve usar interfaces em vez de classes concretas.
