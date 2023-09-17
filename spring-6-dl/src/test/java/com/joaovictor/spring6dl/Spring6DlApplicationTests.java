@@ -8,6 +8,9 @@ import org.springframework.context.ApplicationContext;
 
 @SpringBootTest
 class Spring6DlApplicationTests {
+	// Dependency Injection (DI) is a technique whereby one object (or static method) supplies the dependencies of another object.
+	// é muito usado para testes
+	// @Autowired is a Spring annotation which acts as a request to Spring to inject a dependency.
 
 	@Autowired
 	ApplicationContext applicationContext;
