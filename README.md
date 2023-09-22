@@ -131,3 +131,60 @@ O princípio da segregação da interface afirma que você deve dividir uma inte
 
 ### Princípio da inversão de dependência
 O princípio da inversão de dependência afirma que você deve depender de abstrações e não de implementações. Isso significa que você deve usar interfaces em vez de classes concretas.
+
+# Dependency Injection
+A injeção de dependência é um padrão de design que é usado para injetar dependências em um objeto. A injeção de dependência permite que você injete dependências em um objeto em vez de criar o objeto dentro do objeto. Isso torna o código mais flexível e fácil de testar.
+
+A injeção de dependência pode ser feita de três maneiras:
+
+- Construtor
+- Setter
+- Método
+
+## Construtor
+A injeção de dependência por meio do construtor é a maneira preferida de injetar dependências em um objeto. A injeção de dependência por meio do construtor é feita passando as dependências como parâmetros para o construtor.
+
+    public class BookService {
+
+        private final BookRepository bookRepository;
+
+        public BookService(BookRepository bookRepository) {
+            this.bookRepository = bookRepository;
+        }
+    }
+
+## Setter
+A injeção de dependência por meio do setter é feita chamando o método setter do objeto e passando a dependência como um parâmetro.
+
+    public class BookService {
+
+        private BookRepository bookRepository;
+
+        public void setBookRepository(BookRepository bookRepository) {
+            this.bookRepository = bookRepository;
+        }
+    }
+
+### @Autowired
+A anotação @Autowired é usada para injetar dependências em um objeto. A anotação @Autowired pode ser usada para injetar dependências em um construtor, método setter ou campo.
+
+### @Qualifier
+A anotação @Qualifier é usada para especificar qual bean deve ser injetado quando há mais de um bean do mesmo tipo.
+
+### @Primary
+A anotação @Primary é usada para especificar qual bean deve ser injetado quando há mais de um bean do mesmo tipo.
+
+### Profiles
+Os perfis são usados para definir um conjunto de beans que devem ser carregados para um ambiente específico. Os perfis são definidos usando a anotação @Profile.
+
+    @Configuration
+    @Profile("dev")
+    public class DevConfig {
+
+    }
+
+    @Configuration
+    @Profile("prod")
+    public class ProdConfig {
+
+    }
