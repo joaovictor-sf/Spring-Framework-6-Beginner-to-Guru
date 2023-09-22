@@ -193,3 +193,35 @@ Os perfis são usados para definir um conjunto de beans que devem ser carregados
     public class ProdConfig {
 
     }
+
+# Indrodução a RestFul Web Services
+REST significa Representational State Transfer. É um estilo de arquitetura de software que define um conjunto de restrições para serem usadas para criar serviços da Web. Os serviços da Web RESTful são serviços da Web que seguem o estilo de arquitetura REST.
+
+## HTTP
+HTTP significa Protocolo de Transferência de Hipertexto. É um protocolo de comunicação usado para transferir dados entre um cliente e um servidor. O HTTP é um protocolo sem estado, o que significa que cada solicitação é tratada independentemente.
+
+### Métodos HTTP
+Os métodos HTTP são usados para indicar a ação a ser executada em um recurso. Os métodos HTTP mais comuns são GET, POST, PUT e DELETE.
+
+- GET - O método GET é usado para recuperar um recurso.
+- POST - O método POST é usado para criar um recurso.
+- PUT - O método PUT é usado para atualizar um recurso.
+- DELETE - O método DELETE é usado para excluir um recurso.
+- PATCH - O método PATCH é usado para atualizar parcialmente um recurso.
+- HEAD - O método HEAD é usado para obter os cabeçalhos de resposta de um recurso.
+- OPTIONS - O método OPTIONS é usado para obter os métodos HTTP suportados por um recurso.
+
+#### GET
+O método GET é usado para recuperar um recurso. O método GET não deve ser usado para executar operações que alteram o estado do servidor. O método GET deve ser usado para recuperar dados.
+
+Quando você visita uma página da Web, seu navegador envia uma solicitação GET para o servidor e o servidor envia uma resposta HTML.
+
+##### HEAD
+O método HEAD é usado para obter os cabeçalhos de resposta de um recurso. O método HEAD é semelhante ao método GET, exceto que o método HEAD não retorna o corpo da resposta.
+
+#### POST
+O método POST é usado para criar um recurso. O método POST deve ser usado para executar operações que alteram o estado do servidor.
+
+Quando você envia um formulário HTML, seu navegador envia uma solicitação POST para o servidor e o servidor envia uma resposta HTML.
+
+Um uso comum do método POST é postar dados em um servidor.
