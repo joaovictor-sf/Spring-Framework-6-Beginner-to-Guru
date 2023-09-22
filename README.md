@@ -7,7 +7,7 @@
 Spring é um framework Java leve e abrangente, criado por Rod Johnson em 2003, que visa simplificar o desenvolvimento de aplicativos empresariais. O Spring Framework é um dos frameworks mais populares para o desenvolvimento de aplicativos Java EE. Devido à sua popularidade e facilidade de uso, o Spring Framework está sendo usado para criar aplicativos corporativos Java em grande escala.
 
 ## Dependencias
-Dependencias utilizadas ate agora
+Dependencias utilizadas até agora
 
 - Spring Web
 - Spring Data JPA
@@ -63,13 +63,13 @@ Anotação que mapeia uma solicitação HTTP para um método de controlador.
 A classe Model é usada para passar dados do controlador para a visualização.
 
 ## Bootstrap
-O Bootstrap é um mecanismo de inicialização que é executado quando o aplicativo é iniciado. Ele é usado para inicializar dados no banco de dados.
+O Bootstrap é um mecanismo de inicialização executado quando o aplicativo é iniciado. Ele é usado para inicializar dados no banco de dados.
 
 ### CommandLineRunner
 A interface CommandLineRunner é usada para executar o código de inicialização quando o aplicativo é iniciado.
 
 ## View
-A camada de visualização é a camada inferior de um aplicativo. Ele contém arquivos de visualização que são usados para renderizar a resposta HTTP. Os arquivos de visualização são geralmente arquivos HTML, JSP, XML ou JSON.
+A camada de visualização é a camada inferior de um aplicativo. Ele contém arquivos de visualização usados para renderizar a resposta HTTP. Os arquivos de visualização são geralmente arquivos HTML, JSP, XML ou JSON.
 
 Ela fica dentro da pasta resources/templates.
 
@@ -138,7 +138,7 @@ O princípio da segregação da interface afirma que você deve dividir uma inte
 O princípio da inversão de dependência afirma que você deve depender de abstrações e não de implementações. Isso significa que você deve usar interfaces em vez de classes concretas.
 
 # Dependency Injection
-A injeção de dependência é um padrão de design que é usado para injetar dependências em um objeto. A injeção de dependência permite que você injete dependências em um objeto em vez de criar o objeto dentro do objeto. Isso torna o código mais flexível e fácil de testar.
+A injeção de dependência é um padrão de design usado para injetar dependências num objeto. A injeção de dependência permite que você injete dependências num objeto em vez de criar o objeto dentro do objeto. Isso torna o código mais flexível e fácil de testar.
 
 A injeção de dependência pode ser feita de três maneiras:
 
@@ -147,7 +147,7 @@ A injeção de dependência pode ser feita de três maneiras:
 - Método
 
 ## Construtor
-A injeção de dependência por meio do construtor é a maneira preferida de injetar dependências em um objeto. A injeção de dependência por meio do construtor é feita passando as dependências como parâmetros para o construtor.
+A injeção de dependência por meio do construtor é a maneira preferida de injetar dependências num objeto. A injeção de dependência por meio do construtor é feita passando as dependências como parâmetros para o construtor.
 
     public class BookService {
 
@@ -171,7 +171,7 @@ A injeção de dependência por meio do setter é feita chamando o método sette
     }
 
 ### @Autowired
-A anotação @Autowired é usada para injetar dependências em um objeto. A anotação @Autowired pode ser usada para injetar dependências em um construtor, método setter ou campo.
+A anotação @Autowired é usada para injetar dependências num objeto. A anotação @Autowired pode ser usada para injetar dependências num construtor, método setter ou campo.
 
 ### @Qualifier
 A anotação @Qualifier é usada para especificar qual bean deve ser injetado quando há mais de um bean do mesmo tipo.
@@ -201,7 +201,7 @@ REST significa Representational State Transfer. É um estilo de arquitetura de s
 HTTP significa Protocolo de Transferência de Hipertexto. É um protocolo de comunicação usado para transferir dados entre um cliente e um servidor. O HTTP é um protocolo sem estado, o que significa que cada solicitação é tratada independentemente.
 
 ### Métodos HTTP
-Os métodos HTTP são usados para indicar a ação a ser executada em um recurso. Os métodos HTTP mais comuns são GET, POST, PUT e DELETE.
+Os métodos HTTP são usados para indicar a ação a ser executada num recurso. Os métodos HTTP mais comuns são GET, POST, PUT e DELETE.
 
 - GET - O método GET é usado para recuperar um recurso.
 - POST - O método POST é usado para criar um recurso.
@@ -210,6 +210,7 @@ Os métodos HTTP são usados para indicar a ação a ser executada em um recurso
 - PATCH - O método PATCH é usado para atualizar parcialmente um recurso.
 - HEAD - O método HEAD é usado para obter os cabeçalhos de resposta de um recurso.
 - OPTIONS - O método OPTIONS é usado para obter os métodos HTTP suportados por um recurso.
+- TRACE - O método TRACE é usado para executar um loop de retorno de mensagem de teste ao longo do caminho para um recurso.
 
 #### GET
 O método GET é usado para recuperar um recurso. O método GET não deve ser usado para executar operações que alteram o estado do servidor. O método GET deve ser usado para recuperar dados.
@@ -220,8 +221,67 @@ Quando você visita uma página da Web, seu navegador envia uma solicitação GE
 O método HEAD é usado para obter os cabeçalhos de resposta de um recurso. O método HEAD é semelhante ao método GET, exceto que o método HEAD não retorna o corpo da resposta.
 
 #### POST
-O método POST é usado para criar um recurso. O método POST deve ser usado para executar operações que alteram o estado do servidor.
+O método POST é usado para criar um recurso. O método POST é usado para executar operações que alteram o estado do servidor.
 
-Quando você envia um formulário HTML, seu navegador envia uma solicitação POST para o servidor e o servidor envia uma resposta HTML.
+Quando você envia um formulário HTML, o seu navegador envia uma solicitação POST para o servidor e o servidor envia uma resposta HTML.
 
-Um uso comum do método POST é postar dados em um servidor.
+Um uso comum do método POST é postar dados num servidor.
+
+#### PUT
+O método PUT é usado para atualizar um recurso. O método PUT é usado para executar operações que alteram o estado do servidor.
+
+##### POST vs PUT
+O método POST é usado para criar um recurso. O método PUT é usado para atualizar um recurso. 
+
+- POST - cria um request
+- PUT - cria ou atualiza um request
+
+#### DELETE
+O método DELETE é usado para excluir um recurso. O método DELETE é usado para executar operações que alteram o estado do servidor.
+
+#### TRACE
+O método TRACE é usado para executar um loop de retorno de mensagem de teste ao longo do caminho para um recurso. O método TRACE é usado para fins de depuração.
+
+Pode ser usado para testar se um servidor está recebendo solicitações corretamente ou se um proxy(ou qualquer outro servidor indermediario) está alterando as solicitações.
+
+#### OPTIONS
+O método OPTIONS é usado para obter os métodos HTTP suportados por um recurso. O método OPTIONS é usado para fins de depuração.
+
+#### PATCH
+O método PATCH é usado para atualizar parcialmente um recurso. O método PATCH é usado para executar operações que alteram o estado do servidor.
+
+### Safe Methods
+Os métodos GET, HEAD, OPTIONS e TRACE são considerados métodos seguros. Isso significa que eles não alteraram o estado do servidor.
+
+### Idempotent Methods
+Os métodos GET, HEAD, OPTIONS, TRACE, PUT e DELETE são considerados métodos idempotentes. Isso significa que eles podem ser chamados várias vezes sem alterar o estado do servidor.
+
+### Not-Idempotent Methods
+Os métodos POST e PATCH não são considerados métodos idempotentes. 
+
+Ex: Multiplos POSTs criam multiplos recursos.
+
+### Status Codes
+Os códigos de status HTTP são usados para indicar o resultado de uma solicitação HTTP. Os códigos de status HTTP são divididos em cinco classes:
+
+- 1xx - Informacional
+- 2xx - Sucesso
+- 3xx - Redirecionamento
+- 4xx - Erro do cliente
+- 5xx - Erro do servidor
+
+Common HTTP Status Codes
+
+- 200 - OK
+- 201 - Created
+- 204 - Accepted
+- 301 - Moved Permanently
+- 304 - Not Modified
+- 400 - Bad Request
+- 401 - Unauthorized
+- 403 - Forbidden
+- 404 - Not Found
+- 405 - Method Not Allowed
+- 409 - Conflict
+- 500 - Internal Server Error
+- 503 - Service Unavailable
