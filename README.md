@@ -367,3 +367,36 @@ O Spring WebClient é o cliente web reativo do Spring. Por default, o WebClient 
 
 ### SPA - Single Page Application
 SPA significa Single Page Application. É um aplicativo da Web que consiste em uma única página da Web que carrega dinamicamente o conteúdo.
+
+# Lombok
+Lombok é uma biblioteca Java que pode ser usada para reduzir a quantidade de código Java que você precisa escrever. O Lombok pode ser usado para gerar automaticamente getters, setters, construtores, métodos equals, métodos hashCode, métodos toString e muito mais.
+
+Não funciona em todas as IDEs. No IntelliJ é necessário instalar o plugin Lombok e habilitar a opção "Enable annotation processing" em Settings > Build, Execution, Deployment > Compiler > Annotation Processors. Outras IDEs podem precisar de algo parecido.
+
+## Features
+- <b>val</b> - Cria uma variável local final.
+- <b>var</b> - Cria uma variável local.
+- <b>@Getter</b> - Gera metodos getters para todos os atributos.
+- <b>@Setter</b> - Gera metodos setters para todos os atributos não finais.
+- <b>@ToString</b> - Gera um método toString.
+  - Gera um método toString que inclui todos os atributos.
+  - Possui um paramentro opcional que pode ser usado para incluir/excluir atributos.
+  - Possui um paramentro opcional que pode ser usado para chamar o método toString da superclasse.
+- <b>@EqualsAndHashCode</b> - Gera métodos equals e hashCode.
+  - Por padrão, vai ultilizar todos os atributos não estáticos e não transientes.
+  - Possui um paramentro opcional que pode ser usado para incluir/excluir atributos.
+- <b>@NoArgsConstructor</b> - Gera um construtor sem argumentos.
+  - Vai causar um erro de compilação se existir um atributo final.
+- <b>@RequiredArgsConstructor</b> - Gera um construtor com argumentos para todos os atributos final ou não nulos.
+  - Gera um construtor com argumentos para todos os atributos final ou não nulos.
+- <b>@Data</b> - Gera métodos getters, setters, equals, hashCode e toString.
+  - Combina as anotações @Getter, @Setter, @EqualsAndHashCode e @ToString.
+- <b>@Value</b> - Gera métodos getters, equals, hashCode e toString.
+  - Todos os atributos são privatos e finais.
+- <b>@NonNull</b> - Causa um erro de compilação se o atributo for nulo.
+- <b>@Builder</b> - Gera um padrão de projeto Builder.
+    - Ex de builder: Book.builder().name("Spring 5").author("John").build();
+- <b>@SneakyThrows</b> - Lança uma exceção verificada sem a necessidade de declarar a exceção.
+- <b>@Synchronized</b> - Uma implementação segura do Java synchronized.
+- <b>@Log</b> - Gera um objeto log.
+- <b>@Log4j</b> - Gera um objeto log4j.
