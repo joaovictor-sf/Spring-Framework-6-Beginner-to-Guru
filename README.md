@@ -213,7 +213,7 @@ Os métodos HTTP são usados para indicar a ação a ser executada num recurso. 
 - TRACE - O método TRACE é usado para executar um loop de retorno de mensagem de teste ao longo do caminho para um recurso.
 
 #### GET
-O método GET é usado para recuperar um recurso. O método GET não deve ser usado para executar operações que alteram o estado do servidor. O método GET deve ser usado para recuperar dados.
+O método GET é usado para recuperar um recurso. Ele não deve ser usado para executar operações que alteram o estado do servidor. O método GET deve ser usado para recuperar dados.
 
 Quando você visita uma página da Web, seu navegador envia uma solicitação GET para o servidor e o servidor envia uma resposta HTML.
 
@@ -360,7 +360,7 @@ O Spring WebFlux é um framework reativo baseado em anotações usado para criar
 ### Spring RestTemplate - WebClient
 O Spring RestTemplate é uma classe usada para fazer chamadas de API RESTful.
 
-Esta em maintenance mode e não recebe mais atualizações. Spring recomenda o uso do WebClient.
+Está em maintenance mode e não recebe mais atualizações. Spring recomenda o uso do WebClient.
 
 ### Spring WebClient
 O Spring WebClient é o cliente web reativo do Spring. Por default, o WebClient usa o Reactor Netty, um não bloqueio, cliente HTTP reativo.
