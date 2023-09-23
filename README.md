@@ -1,7 +1,7 @@
 # Table of Contents
 1. [Spring Framework 6: Beginner to Guru](#spring-framework-6-beginner-to-guru)
 2. [Dependency Injection](#dependency-injection)
-
+3. [Introdução a Restful Web Services](#introducao-a-restful-web-services)
 
 # Spring Framework 6: Beginner to Guru
 Spring é um framework Java leve e abrangente, criado por Rod Johnson em 2003, que visa simplificar o desenvolvimento de aplicativos empresariais. O Spring Framework é um dos frameworks mais populares para o desenvolvimento de aplicativos Java EE. Devido à sua popularidade e facilidade de uso, o Spring Framework está sendo usado para criar aplicativos corporativos Java em grande escala.
@@ -194,7 +194,7 @@ Os perfis são usados para definir um conjunto de beans que devem ser carregados
 
     }
 
-# Indrodução a RestFul Web Services
+# Introdução a Restful Web Services
 REST significa Representational State Transfer. É um estilo de arquitetura de software que define um conjunto de restrições para serem usadas para criar serviços da Web. Os serviços da Web RESTful são serviços da Web que seguem o estilo de arquitetura REST.
 
 ## HTTP
@@ -285,3 +285,85 @@ Common HTTP Status Codes
 - 409 - Conflict
 - 500 - Internal Server Error
 - 503 - Service Unavailable
+
+## REST
+REST significa Representational State Transfer. É um estilo de arquitetura de software que define um conjunto de restrições para serem usadas para criar serviços da Web. Os serviços da Web RESTful são serviços da Web que seguem o estilo de arquitetura REST.
+
+### REST HTTP Methods
+Os métodos HTTP são usados para indicar a ação a ser executada num recurso. Os métodos HTTP mais comuns são GET, POST, PUT e DELETE.
+
+- GET - O método GET é usado para recuperar um recurso.
+- POST - O método POST é usado para criar um recurso.
+- PUT - O método PUT é usado para criar(se não existir) ou atualizar(se existir) um recurso.
+- DELETE - O método DELETE é usado para excluir um recurso.
+- PATCH - O método PATCH é usado para atualizar parcialmente um recurso.
+
+### Richardson Maturity Model
+O Richardson Maturity Model é um modelo usado para avaliar o nível de maturidade de um serviço da Web RESTful. O Richardson Maturity Model é dividido em quatro níveis:
+
+- Nível 0 - POX
+- Nível 1 - Recursos
+- Nível 2 - HTTP Verbs
+- Nível 3 - Hypermedia Controls
+
+#### Nível 0 - POX (Plain Old XML)
+O nível 0 é o nível mais baixo do Richardson Maturity Model. No nível 0, os serviços da Web são usados para expor operações de negócios. Os serviços da Web no nível 0 são chamados de serviços da Web POX.
+
+- Ultiliza XML para troca de dados
+- Ex: SOAP, XML-RPC, RPC
+
+#### Nível 1 - Recursos
+O nível 1 é o nível intermediário do Richardson Maturity Model. No nível 1, os serviços da Web são usados para expor recursos. Os serviços da Web no nível 1 são chamados de serviços da Web RESTful.
+
+- Ultiliza URI para identificar recursos
+- Ex: http://localhost:8080/api/v1/books
+- Ex: http://localhost:8080/api/v1/books/1
+
+#### Nível 2 - HTTP Verbs
+O nível 2 é o nível intermediário do Richardson Maturity Model. No nível 2, os serviços da Web são usados para expor recursos e os métodos HTTP são usados para indicar a ação a ser executada num recurso.
+
+- Ultiliza HTTP Verbs para indicar a ação a ser executada num recurso
+- Ex: GET/products/1234 - Recupera o produto 1234
+- Ex: POST/products - Cria um novo produto
+- Ex: PUT/products/1234 - Atualiza o produto 1234
+- Ex: DELETE/products/1234 - Exclui o produto 1234
+
+#### Nível 3 - Hypermedia Controls
+O nível 3 é o nível mais alto do Richardson Maturity Model. No nível 3, os serviços da Web são usados para expor recursos, os métodos HTTP são usados para indicar a ação a ser executada num recurso e os links são usados para navegar entre os recursos.
+
+- Ultiliza Hypermedia Controls para navegar entre os recursos
+- Spring implementa o HATEOAS
+
+##### Resumo
+- Nível 1 - Quebra grandes serviços em URIs distintas
+- Nível 2 - Ultiliza HTTP Verbs para indicar a ação a ser executada num recurso
+- Nível 3 - Ultiliza Hypermedia Controls para navegar entre os recursos
+
+### HATEOAS
+HATEOAS significa Hypermedia as the Engine of Application State. É um estilo de arquitetura de software que define um conjunto de restrições para serem usadas para criar serviços da Web. Os serviços da Web HATEOAS são serviços da Web que seguem o estilo de arquitetura HATEOAS.
+
+O estilo de arquitetura HATEOAS é baseado no estilo de arquitetura REST. O estilo de arquitetura HATEOAS adiciona uma restrição ao estilo de arquitetura REST. A restrição adicionada pelo estilo de arquitetura HATEOAS é que os links devem ser usados para navegar entre os recursos.
+
+## Spring Framework e RESTFul Web Services
+O Spring Framework possui suporte para criar serviços da Web RESTful.
+
+### Spring MVC
+O Spring MVC é um framework MVC baseado em anotações usado para criar aplicativos da Web. O Spring MVC é um dos frameworks MVC mais populares para criar aplicativos da Web.
+
+Faz parte do Spring Web.
+
+Baseado no Java Servlet API e por natureza é não reativo.
+
+### Spring WebFlux
+O Spring WebFlux é um framework reativo baseado em anotações usado para criar aplicativos da Web.
+
+### Spring RestTemplate - WebClient
+O Spring RestTemplate é uma classe usada para fazer chamadas de API RESTful.
+
+Esta em maintenance mode e não recebe mais atualizações. Spring recomenda o uso do WebClient.
+
+### Spring WebClient
+O Spring WebClient é o cliente web reativo do Spring. Por default, o WebClient usa o Reactor Netty, um não bloqueio, cliente HTTP reativo.
+
+### SPA - Single Page Application
+SPA significa Single Page Application. É um aplicativo da Web que consiste em uma única página da Web que carrega dinamicamente o conteúdo.
