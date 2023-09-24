@@ -400,3 +400,6 @@ Não funciona em todas as IDEs. No IntelliJ é necessário instalar o plugin Lom
 - <b>@Synchronized</b> - Uma implementação segura do Java synchronized.
 - <b>@Log</b> - Gera um objeto log.
 - <b>@Log4j</b> - Gera um objeto log4j.
+
+### DeLombok
+Alguma IDEs tornam possivel reverter o código gerado pelo Lombok para o código original. Isso é chamado de DeLombok.
