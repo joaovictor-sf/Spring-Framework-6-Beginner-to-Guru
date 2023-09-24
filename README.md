@@ -2,6 +2,7 @@
 1. [Spring Framework 6: Beginner to Guru](#spring-framework-6-beginner-to-guru)
 2. [Dependency Injection](#dependency-injection)
 3. [Introdução a Restful Web Services](#introducao-a-restful-web-services)
+4. [Lombok](#lombok)
 
 # Spring Framework 6: Beginner to Guru
 Spring é um framework Java leve e abrangente, criado por Rod Johnson em 2003, que visa simplificar o desenvolvimento de aplicativos empresariais. O Spring Framework é um dos frameworks mais populares para o desenvolvimento de aplicativos Java EE. Devido à sua popularidade e facilidade de uso, o Spring Framework está sendo usado para criar aplicativos corporativos Java em grande escala.
@@ -403,3 +404,27 @@ Não funciona em todas as IDEs. No IntelliJ é necessário instalar o plugin Lom
 
 ### DeLombok
 Alguma IDEs tornam possivel reverter o código gerado pelo Lombok para o código original. Isso é chamado de DeLombok.
+
+# Spring MVC Rest Services
+
+## POJO
+POJO significa Plain Old Java Object. É um objeto Java simples que não estende ou implementa nada.
+
+Classes de domínio são POJOs.
+
+#### @RestController
+A anotação @RestController é usada para criar um controlador REST. A anotação @RestController combina as anotações @Controller e @ResponseBody.
+
+#### Diferença entre @Controller e @RestController
+A principal diferença entre @Controller e @RestController está no tipo de resposta que eles produzem. @Controller é usado para criar controladores que geram respostas baseadas em visões (Views), enquanto @RestController é usado para criar controladores que geram respostas RESTful serializadas diretamente para o corpo da resposta HTTP. A escolha entre eles depende do tipo de aplicativo que você está desenvolvendo e dos requisitos de resposta HTTP.
+
+#### @RequestMapping
+A anotação @RequestMapping é usada para mapear uma solicitação HTTP para um método de controlador. A anotação @RequestMapping pode ser usada para mapear uma solicitação HTTP para um método de controlador com base no método HTTP, cabeçalhos HTTP, parâmetros de solicitação, parâmetros de caminho, etc.
+
+Ex:
+
+    @RequestMapping("/api/v1/beer")
+    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "{id}", method = RequestMethod.GET)
+
+
