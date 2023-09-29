@@ -3,6 +3,7 @@
 2. [Dependency Injection](#dependency-injection)
 3. [Introdução a Restful Web Services](#introducao-a-restful-web-services)
 4. [Lombok](#lombok)
+5. [Spring MVC Rest Services](#spring-mvc-rest-services)
 
 # Spring Framework 6: Beginner to Guru
 Spring é um framework Java leve e abrangente, criado por Rod Johnson em 2003, que visa simplificar o desenvolvimento de aplicativos empresariais. O Spring Framework é um dos frameworks mais populares para o desenvolvimento de aplicativos Java EE. Devido à sua popularidade e facilidade de uso, o Spring Framework está sendo usado para criar aplicativos corporativos Java em grande escala.
@@ -388,6 +389,7 @@ Não funciona em todas as IDEs. No IntelliJ é necessário instalar o plugin Lom
   - Possui um paramentro opcional que pode ser usado para incluir/excluir atributos.
 - <b>@NoArgsConstructor</b> - Gera um construtor sem argumentos.
   - Vai causar um erro de compilação se existir um atributo final.
+- <b>@AllArgsConstructor</b> - Gera um construtor com argumentos para todos os atributos.
 - <b>@RequiredArgsConstructor</b> - Gera um construtor com argumentos para todos os atributos final ou não nulos.
   - Gera um construtor com argumentos para todos os atributos final ou não nulos.
 - <b>@Data</b> - Gera métodos getters, setters, equals, hashCode e toString.
@@ -412,13 +414,13 @@ POJO significa Plain Old Java Object. É um objeto Java simples que não estende
 
 Classes de domínio são POJOs.
 
-#### @RestController
+### @RestController
 A anotação @RestController é usada para criar um controlador REST. A anotação @RestController combina as anotações @Controller e @ResponseBody.
 
 #### Diferença entre @Controller e @RestController
 A principal diferença entre @Controller e @RestController está no tipo de resposta que eles produzem. @Controller é usado para criar controladores que geram respostas baseadas em visões (Views), enquanto @RestController é usado para criar controladores que geram respostas RESTful serializadas diretamente para o corpo da resposta HTTP. A escolha entre eles depende do tipo de aplicativo que você está desenvolvendo e dos requisitos de resposta HTTP.
 
-#### @RequestMapping
+### @RequestMapping
 A anotação @RequestMapping é usada para mapear uma solicitação HTTP para um método de controlador. A anotação @RequestMapping pode ser usada para mapear uma solicitação HTTP para um método de controlador com base no método HTTP, cabeçalhos HTTP, parâmetros de solicitação, parâmetros de caminho, etc.
 
 Ex:
@@ -428,3 +430,48 @@ Ex:
     @RequestMapping(value = "{id}", method = RequestMethod.GET)
 
 
+### @Builder
+A anotação @Builder é usada para gerar um padrão de projeto Builder. Ela cria uma classe interna Builder que pode ser usada para criar objetos.
+
+Ex:
+
+    BeerDto beerDto = BeerDto.builder()
+        .id(UUID.randomUUID())
+        .beerName("Galaxy Cat")
+        .beerStyle("Pale Ale")
+        .build();
+
+#### ResponseEntity
+A classe ResponseEntity é usada para criar uma resposta HTTP com um código de status HTTP e um corpo de resposta.
+
+Starus: 
+- HttpStatus.NO_CONTENT - 204
+- HttpStatus.CREATED - 201
+- HttpStatus.OK - 200
+- HttpStatus.BAD_REQUEST - 400
+- HttpStatus.NOT_FOUND - 404
+- HttpStatus.INTERNAL_SERVER_ERROR - 500
+- etc
+
+#### @PostMapping
+A anotação @PostMapping é usada para mapear uma solicitação HTTP POST para um método de controlador.
+
+#### @PutMapping
+A anotação @PutMapping é usada para mapear uma solicitação HTTP PUT para um método de controlador.
+
+#### @DeleteMapping
+A anotação @DeleteMapping é usada para mapear uma solicitação HTTP DELETE para um método de controlador.
+
+#### @PatchMapping
+A anotação @PatchMapping é usada para mapear uma solicitação HTTP PATCH para um método de controlador.
+
+#### OBS
+- @RequestMapping é um método mais genérico que pode ser usado para mapear qualquer solicitação HTTP para um método de controlador.
+- @GetMapping, @PostMapping, @PutMapping, @DeleteMapping e @PatchMapping são métodos mais específicos que podem ser usados para mapear solicitações HTTP GET, POST, PUT, DELETE e PATCH para métodos de controlador.
+- @PutMapping, @DeleteMapping e @PatchMapping são métodos mais específicos que precisam de um parâmetro especificando o caminho do recurso.
+
+#### @RequestBody
+A anotação @RequestBody é usada para vincular o corpo de uma solicitação HTTP a um parâmetro de método.
+
+#### @PathVariable
+A anotação @PathVariable é usada para vincular uma variável de caminho de uma solicitação HTTP a um parâmetro de método.
