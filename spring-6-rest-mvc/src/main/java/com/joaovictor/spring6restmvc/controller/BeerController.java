@@ -20,14 +20,21 @@ import java.util.UUID;
 public class BeerController {
     private final BeerService beerService;
 
-    @DeleteMapping("{beerid}")
+    @PatchMapping("{id}")
+    public ResponseEntity updateBeerPatchById(@PathVariable("id") UUID id, @RequestBody Beer beer) {
+        beerService.upatchBeerById(id, beer);
+
+        return new ResponseEntity(HttpStatus.NO_CONTENT);
+    }
+
+    @DeleteMapping("{id}")
     public ResponseEntity deleteById(@PathVariable("id") UUID id) {
         beerService.deleteById(id);
 
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 
-    @PutMapping("{beerid}")
+    @PutMapping("{id}")
     public ResponseEntity updateById(@PathVariable("id") UUID id,@RequestBody Beer beer) {
         beerService.updateBeer(id ,beer);
 
