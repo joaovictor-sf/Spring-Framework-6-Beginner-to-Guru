@@ -99,6 +99,11 @@ public class BeerServiceImpl implements BeerService {
     }
 
     @Override
+    public void deleteById(UUID id) {
+        beerMap.remove(id);
+    }
+
+    @Override
     public Beer getBeerById(UUID id) {
 
         log.debug("I was called from BeerServiceImpl.java");
