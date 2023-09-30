@@ -1,20 +1,20 @@
 package com.joaovictor.spring6restmvc.services;
 
-import com.joaovictor.spring6restmvc.model.Customer;
+import com.joaovictor.spring6restmvc.model.CustomerDTO;
 
 import java.util.List;
 import java.util.UUID;
 
 public interface CustomerService {
-    List<Customer> listCustomers();
+    List<CustomerDTO> listCustomers();
 
-    Customer getCustomerById(UUID id);
+    CustomerDTO getCustomerById(UUID id);
 
-    Customer saveNewCustomer(Customer customer);
+    CustomerDTO saveNewCustomer(CustomerDTO customerDTO);
 
-    void updateCustomer(UUID customerId, Customer customer);
+    void updateCustomer(UUID customerId, CustomerDTO customerDTO);
 
     void deleteById(UUID customerId);
 
-    void upatchCustomerById(UUID customerId, Customer customer);
+    void upatchCustomerById(UUID customerId, CustomerDTO customerDTO);
 }
