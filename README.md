@@ -475,3 +475,28 @@ A anotação @RequestBody é usada para vincular o corpo de uma solicitação HT
 
 #### @PathVariable
 A anotação @PathVariable é usada para vincular uma variável de caminho de uma solicitação HTTP a um parâmetro de método.
+
+# Spring Data JPA com Spring MVC
+
+## DTO - Data Transfer Object
+DTO significa Data Transfer Object. É um objeto usado para transferir dados entre camadas, mas não devem ser usados para persistir dados.
+
+- São simples POJOs que não contêm lógica de negócios.
+
+### Por que usar DTOs?
+- Reduzir a quantidade de dados transferidos entre camadas.
+- Para projetos simples você não precisa usar DTOs.
+- Entidades podem vazar dados confidenciais.
+- Quando mais complexo o projeto, mais importante é usar DTOs.
+
+## @Entity
+A anotação @Entity é usada para indicar que a classe é uma entidade. Uma entidade representa uma tabela no banco de dados.
+
+## @GeneratedValue
+A anotação @GeneratedValue é usada para indicar que o valor do atributo é gerado automaticamente.
+
+## @GenericGenerator
+A anotação @GenericGenerator é usada para indicar que um gerador personalizado deve ser usado para gerar o valor do atributo.
+
+## @Column
+A anotação @Column é usada para indicar que o atributo é uma coluna no banco de dados.
